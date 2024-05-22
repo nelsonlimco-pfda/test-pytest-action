@@ -23,7 +23,11 @@ runs:
       run: |
               echo "INPUT_NUM=${{ inputs.num }}" >> $GITHUB_ENV
       shell: bash
-    - name: Run script
+    - name: Check out action repository
+      uses: actions/checkout@v4
+      with:
+        repository: nelsonlimco-pfda/test-pytest-action
+        path: action
       run: |
         pwd
         ls
@@ -37,5 +41,5 @@ runs:
     - name: Fetch the number's square
       id: get-square
       run: |
-        python src/get_num_square.py
+        python action/src/get_num_square.py
       shell: bash
