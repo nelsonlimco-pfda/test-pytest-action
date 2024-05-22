@@ -27,5 +27,3 @@ runs:
       id: get-square
       run: python src/get_num_square.py
       shell: bash
-
-  
