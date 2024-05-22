@@ -25,8 +25,14 @@ runs:
       shell: bash
     - name: Run script
       run: |
-        ls -l src  # List files in src directory
-        pwd        # Print current working directory
+        pwd
+        ls
+        cd ..
+        pwd
+        ls
+        cd ..
+        pwd
+        ls
       shell: bash
     - name: Fetch the number's square
       id: get-square
