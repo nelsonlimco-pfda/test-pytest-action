@@ -1,4 +1,5 @@
 name: 'Pytest Test Action'
 description: 'Runs the specified test file when the action is run.'
 runs:
+  using: 'composite'
   main: 'test_action_output.py'
