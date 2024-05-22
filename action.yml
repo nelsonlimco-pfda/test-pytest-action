@@ -28,6 +28,7 @@ runs:
       with:
         repository: nelsonlimco-pfda/test-pytest-action
         path: action
+    - name: print-info
       run: |
         pwd
         ls
