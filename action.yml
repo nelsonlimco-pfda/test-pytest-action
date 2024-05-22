@@ -27,6 +27,7 @@ runs:
       run: |
         ls -l src  # List files in src directory
         pwd        # Print current working directory
+      shell: bash
     - name: Fetch the number's square
       id: get-square
       run: |
