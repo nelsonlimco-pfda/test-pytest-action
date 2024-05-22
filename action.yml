@@ -23,9 +23,12 @@ runs:
       run: |
               echo "INPUT_NUM=${{ inputs.num }}" >> $GITHUB_ENV
       shell: bash
+    - name: Run script
+      run: |
+        ls -l src  # List files in src directory
+        pwd        # Print current working directory
     - name: Fetch the number's square
       id: get-square
       run: |
-        cd ..
         python src/get_num_square.py
       shell: bash
