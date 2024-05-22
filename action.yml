@@ -1,5 +1,31 @@
-name: 'Pytest Test Action'
-description: 'Runs the specified test file when the action is run.'
+name: 'Test Action'
+description: 'Takes an input and returns its square.'
+inputs:
+  num:
+    description: 'Enter a number'
+    required: true
+    default: "1"
+  outputs:
+    num_squared:
+      description: 'Square of the input'
+      value: ${{ steps.get-square.outputs.num_squared }}
 runs:
   using: 'composite'
-  main: 'test_action_output.py'
+  steps:
+    - name: Install Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - name: Install Dependencies
+      run: pip install -r requirements.txt
+      shell: bash
+    - name: Pass Inputs to Shell
+      run: |
+              echo "INPUT_NUM=${{ inputs.num }}" >> $GITHUB_ENV
+      shell: bash
+    - name: Fetch the number's square
+      id: get-square
+      run: python src/get_num_square.py
+      shell: bash
+
+  
