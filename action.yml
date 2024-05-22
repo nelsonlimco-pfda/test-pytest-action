@@ -1,4 +1,4 @@
-name: 'Pytest Action'
+name: 'Pytest Test Action'
 description: 'Runs the specified test file when the action is run.'
 runs:
   main: 'test_action_output.py'
