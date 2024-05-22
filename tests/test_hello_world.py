@@ -19,4 +19,4 @@ def test_input_output(monkeypatch):
         sys.modules.pop(module_name, None)
         mod = importlib.import_module(name=module_name)
         mod.main()
-    assert patch_stdout.getvalue() == expected, (f"result=arbitrary_test_result >> $GITHUB_OUTPUT")
+    assert patch_stdout.getvalue() == expected, (f"test_result=arbitrary_test_result >> $GITHUB_OUTPUT")

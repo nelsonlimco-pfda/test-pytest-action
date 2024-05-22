@@ -27,6 +27,7 @@ runs:
       run: |
         chmod +x /action/scripts/move_tests.sh
         /action/scripts/move_tests.sh
+      shell: bash
     - name: Run tests
       id: run-tests
       run: |
