@@ -1,14 +1,9 @@
 name: 'Test Action'
-description: 'Takes an input and returns its square.'
-inputs:
-  num:
-    description: 'Enter a number'
-    required: true
-    default: "1"
+description: 'Tests student code.'
 outputs:
-  num_squared:
-    description: 'Square of the input'
-    value: ${{ steps.get-square.outputs.num_squared }}
+  test_result:
+    description: 'The results of the unit test'
+    value: ${{ steps.run-tests.outputs.result }}
 runs:
   using: 'composite'
   steps:
@@ -28,19 +23,12 @@ runs:
       with:
         repository: nelsonlimco-pfda/test-pytest-action
         path: action
-    - name: print-info
+    - name: Move tests to working directory
       run: |
-        pwd
-        ls
-        cd ..
-        pwd
-        ls
-        cd ..
-        pwd
-        ls
-      shell: bash
-    - name: Fetch the number's square
-      id: get-square
+        chmod +x /action/scripts/move_tests.sh
+        /action/scripts/move_tests.sh
+    - name: Run tests
+      id: run-tests
       run: |
-        python action/src/get_num_square.py
+        pytest -vv
       shell: bash
