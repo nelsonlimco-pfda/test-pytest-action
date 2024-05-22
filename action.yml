@@ -5,10 +5,10 @@ inputs:
     description: 'Enter a number'
     required: true
     default: "1"
-  outputs:
-    num_squared:
-      description: 'Square of the input'
-      value: ${{ steps.get-square.outputs.num_squared }}
+outputs:
+  num_squared:
+    description: 'Square of the input'
+    value: ${{ steps.get-square.outputs.num_squared }}
 runs:
   using: 'composite'
   steps:
