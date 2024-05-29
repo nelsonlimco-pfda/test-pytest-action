@@ -23,6 +23,11 @@ runs:
       with:
         repository: nelsonlimco-pfda/test-pytest-action
         path: action
+    - name: List directories
+      run: | 
+        ls
+        cd action
+        ls
     - name: Move tests to working directory
       run: |
         chmod +x /action/scripts/move_tests.sh
