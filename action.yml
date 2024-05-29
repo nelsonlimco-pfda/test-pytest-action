@@ -28,11 +28,13 @@ runs:
         ls
         cd action
         ls
+        cd scripts
+        ls
       shell: bash
     - name: Move tests to working directory
       run: |
-        chmod +x /action/scripts/move_tests.sh
-        /action/scripts/move_tests.sh
+        chmod +x action/scripts/move_tests.sh
+        action/scripts/move_tests.sh
       shell: bash
     - name: Run tests
       id: run-tests
