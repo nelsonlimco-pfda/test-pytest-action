@@ -28,6 +28,7 @@ runs:
         ls
         cd action
         ls
+      shell: bash
     - name: Move tests to working directory
       run: |
         chmod +x /action/scripts/move_tests.sh
