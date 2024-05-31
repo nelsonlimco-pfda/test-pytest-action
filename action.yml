@@ -1,4 +1,4 @@
-name: 'Test Action'
+name: 'Demo Pytest Action'
 description: 'Tests student code.'
 outputs:
   test_result:
